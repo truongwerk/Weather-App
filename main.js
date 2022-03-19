@@ -1,1 +1,1 @@
-console.log("test web pack");
+console.log("test web pak"),async function(o){try{const o=await fetch("http://api.openweathermap.org/geo/1.0/direct?q=ha noi&limit=5&appid=071ccef383eb80fc1abfd8e75526cb0d",{mode:"cors"}),e=await o.json();console.log(e)}catch(o){console.log("getLocation error"+o)}}();
