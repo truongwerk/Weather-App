@@ -28,7 +28,7 @@ function display(data, geocoding) {
 	moreInfo2.textContent = `Humidity: ${data.main.humidity}% | Pressure: ${data.main.pressure}mb`;
 	latLon.textContent = `Lat: ${data.coord.lat} | Lon: ${data.coord.lon}`;
 	function change() {
-		if (tempSwitch.checked === true) {
+		if (tempSwitch.checked === false) {
 			tempDisplay(data, "c");
 		} else {
 			tempDisplay(data, "f");
