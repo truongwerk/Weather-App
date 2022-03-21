@@ -1,6 +1,141 @@
+/* Base Style */
+
 * {
 	box-sizing: border-box;
 }
+@font-face {
+	font-family: OpenSans;
+	src: url(./fonts/OpenSans.ttf);
+}
 html {
 	font-size: 62.5%;
+	color: white;
+	font-family: OpenSans, Impact, Haettenschweiler, "Arial Narrow Bold",
+		sans-serif;
+}
+
+/* Layout */
+body {
+	display: flex;
+	width: 100%;
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+	background: rgb(146, 34, 195);
+	background: linear-gradient(
+		0deg,
+		rgba(146, 34, 195, 1) 0%,
+		rgba(253, 187, 45, 1) 100%
+	);
+}
+
+#container {
+	width: 95%;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	background-color: #0b3166;
+}
+
+#header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 0;
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+#header img {
+	height: 50px;
+	margin-right: 10px;
+}
+#header h1 {
+	font-size: 3rem;
+	color: black;
+}
+
+#search {
+	margin: 10px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#gps {
+	background: none;
+	border: 0;
+	color: white;
+	font-size: 3rem;
+	margin-right: 20px;
+}
+
+#gps:hover {
+	color: coral;
+	cursor: pointer;
+}
+
+#location {
+	padding: 5px;
+	font-size: 2rem;
+	width: 200px;
+}
+
+#process {
+	width: 100%;
+	visibility: hidden;
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 10px;
+}
+
+#city {
+	text-align: center;
+	font-size: 3rem;
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+	margin-bottom: 10px;
+}
+#country {
+	text-align: center;
+	font-size: 2.5rem;
+}
+
+#mainContent {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#weather {
+	width: 100px;
+}
+#temp {
+	font-size: 4rem;
+}
+
+#moreInfo1,
+#moreInfo2 {
+	font-size: 1.8rem;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+#latLon {
+	text-align: center;
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+}
+
+@media all and (min-width: 500px) {
+	html {
+		font-size: 70%;
+	}
+}
+
+@media all and (min-width: 768px) {
+	#container {
+		width: 700px;
+	}
+	html {
+		font-size: 80%;
+	}
 }
