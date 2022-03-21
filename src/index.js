@@ -3,6 +3,7 @@ let geocoding = [];
 const form = document.querySelector("form");
 const input = document.querySelector("input");
 form.onsubmit = submit;
+let apiKey = "071ccef383eb80fc1abfd8e75526cb0d";
 function submit(e) {
 	getLocation(input.value);
 	e.preventDefault();
@@ -10,7 +11,7 @@ function submit(e) {
 
 async function getLocation(search) {
 	geocoding = [];
-	const requestURL = `http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=071ccef383eb80fc1abfd8e75526cb0d`;
+	const requestURL = `http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${apiKey}`;
 	try {
 		const response = await fetch(requestURL, { mode: "cors" });
 		geocoding = await response.json();
@@ -31,7 +32,7 @@ function geocodingUsage(geocoding) {
 }
 
 async function getCurrentWeather(lat, lon) {
-	const requestURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=071ccef383eb80fc1abfd8e75526cb0d&units=metric`;
+	const requestURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 	try {
 		const response = await fetch(requestURL, { mode: "cors" });
 		const responseData = await response.json();
@@ -39,4 +40,43 @@ async function getCurrentWeather(lat, lon) {
 	} catch (error) {
 		console.log("Get Current Data Error" + error);
 	}
+}
+
+const gpsBtn = document.getElementById("gps");
+gpsBtn.addEventListener("click", getGPS);
+
+async function reverseGeocoding(lat, lon) {
+	const requestURL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+	try {
+		const response = await fetch(requestURL, { mode: "cors" });
+		const responseData = await response.json();
+		console.log(responseData);
+	} catch (error) {
+		console.log(error);
+	}
+}
+
+let options = {
+	enableHighAccuracy: true,
+	timeout: 5000,
+	maximumAge: 0,
+};
+
+function getGPS() {
+	navigator.geolocation.getCurrentPosition(success, error, options);
+}
+
+function success(pos) {
+	var crd = pos.coords;
+
+	console.log("Your current position is:");
+	console.log(`Latitude : ${crd.latitude}`);
+	console.log(`Longitude: ${crd.longitude}`);
+	reverseGeocoding(crd.latitude, crd.longitude);
+	getCurrentWeather(crd.latitude, crd.longitude);
+	console.log(`More or less ${crd.accuracy} meters.`);
+}
+
+function error(err) {
+	console.warn(`ERROR(${err.code}): ${err.message}`);
 }
