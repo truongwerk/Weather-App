@@ -4,19 +4,45 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" href="style/images/logo.ico" />
+		<script
+			src="https://kit.fontawesome.com/7a5a3ae35f.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="icon" href="style/images/logo.png" />
 		<link rel="stylesheet" href="style/reset.css" />
 		<link rel="stylesheet" href="style/style.css" />
 		<title>Weather App</title>
 	</head>
 	<body>
-		<form>
-			<label for="location"></label>
-			<input type="text" id="location" />
-			<button>Enter</button>
-		</form>
-		<button id="gps">get location</button>
-		<!-- <script src="main.js"></script> -->
-		<script src="../src/index.js"></script>
+		<div id="container">
+			<div id="header">
+				<img src="style/images/logo.png" alt="logo" />
+				<h1>Current Weather</h1>
+			</div>
+			<div id="search">
+				<i id="gps" class="fa-solid fa-location-dot"></i>
+				<form>
+					<input type="text" id="location" placeholder="Search location..." />
+				</form>
+			</div>
+			<h3 id="process">--- Loading ---</h3>
+			<div id="content">
+				<h2 id="city">Ho Chi Minh City</h2>
+				<h3 id="country">VN</h3>
+				<div id="mainContent">
+					<img
+						src="http://openweathermap.org/img/wn/04d@2x.png"
+						alt="weather"
+						id="weather"
+					/>
+					<h3 id="temp">31°C</h3>
+				</div>
+				<h3 id="moreInfo1">Clouds,broken clouds | Feel like: 34.3°C</h3>
+				<h3 id="moreInfo2">Humidity: 58% | Pressure: 1010mb</h3>
+				<h3 id="latLon">Lat: 10.7758 | Lon: 106.7018</h3>
+			</div>
+		</div>
+		<script src="main.js"></script>
+		<!-- <script type="module" src="../src/index.js"></script> -->
 	</body>
 </html>
