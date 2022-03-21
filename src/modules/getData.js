@@ -83,14 +83,3 @@ function gpsSuccess(pos) {
 function gpsError(err) {
 	console.warn(`ERROR(${err.code}): ${err.message}`);
 }
-
-// async function reverseGeocoding(lat, lon) {
-// 	const requestURL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-// 	try {
-// 		const response = await fetch(requestURL, { mode: "cors" });
-// 		const responseData = await response.json();
-// 		console.log(responseData);
-// 	} catch (error) {
-// 		console.log(error);
-// 	}
-// }
