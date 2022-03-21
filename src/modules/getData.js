@@ -23,7 +23,7 @@ async function getLocation(search) {
 	geocoding = [];
 	process.textContent = "--- LOADING ---";
 	process.style.visibility = "visible";
-	const requestURL = `http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${apiKey}`;
+	const requestURL = `https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${apiKey}`;
 	try {
 		const response = await fetch(requestURL, { mode: "cors" });
 		geocoding = await response.json();
