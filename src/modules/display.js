@@ -11,6 +11,7 @@ const moreInfo2 = document.getElementById("moreInfo2");
 const latLon = document.getElementById("latLon");
 const tempSwitch = document.getElementById("togBtn");
 
+
 function display(data, geocoding) {
 	process.style.visibility = "hidden";
 	console.log(data);
