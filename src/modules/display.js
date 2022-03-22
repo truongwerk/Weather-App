@@ -22,7 +22,7 @@ function display(data, geocoding) {
 		city.textContent = data.name;
 		country.textContent = data.sys.country;
 	}
-	weatherImage.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+	weatherImage.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 	change();
 	tempSwitch.onchange = change;
 	moreInfo1.textContent = `${data.weather[0].main},${data.weather[0].description}`;
