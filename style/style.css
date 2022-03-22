@@ -3,16 +3,11 @@
 * {
 	box-sizing: border-box;
 }
-@font-face {
-	font-family: OpenSans;
-	src: url(./OpenSans.ttf);
-	font-display: swap;
-}
+
 html {
 	font-size: 62.5%;
 	color: white;
-	font-family: OpenSans, Impact, Haettenschweiler, "Arial Narrow Bold",
-		sans-serif;
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 /* Layout */
@@ -68,7 +63,8 @@ body {
 	background: none;
 	border: 0;
 	color: white;
-	font-size: 3rem;
+	width: 50px;
+	height: 50px;
 	margin-right: 20px;
 }
 
