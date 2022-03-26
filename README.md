@@ -25,7 +25,7 @@ https://truongwerk.github.io/Weather-App/
 ## Build with
 - Use https://openweathermap.org/ api.
 - Vanilla javascript and css.
-- Bundle with webpack.
+- Bundle with Webpack and Babel.
 - Linting with ESlint and prettier.
 ## License
 
