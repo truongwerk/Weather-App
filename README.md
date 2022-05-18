@@ -20,7 +20,7 @@ https://truongwerk.github.io/Weather-App/
 - Get location with gps with reverse geocoding api.
 - Check current weather with weather api.
 - Celsius to fahrenheit and vice versa toggle.
-- Responsive
+- Responsive.
 
 
 ## Build with
